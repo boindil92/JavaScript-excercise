@@ -9,31 +9,25 @@
 
     <body>
         <script>
-            
-              
 
-            function sum(a,b){
-               let res= a+b;
-               console.log (res);
-
-               
-               
-            }
-            
-            
-            function min(a,b){
-                let res= a-b;
+             let c=1;
+                    
+            function sum(a,b=show()){
+                let res= a+b+c;
                 console.log (res);
-                
+               
             }
-            let a=5;
-            let b=4;
-            let res=a+b;
-            console.log (res);
-            
+                        
+            function min(a,b=show()){
+                let res= a-b+c;
+                console.log (res);    
+            }
 
-            
-        
+            function show(){
+                let message= 'Insert Variables';
+                alert (message);
+            }
+       
             
         </script>
     </body>
