@@ -14,13 +14,33 @@ function getComputerChoice () {
     }
 }
 
-function singleRound () {
+function singleRound (string) {
+   
     let player = prompt("Please choose your weapon: ","rock,paper or scissors!");
-    
-
-
+    let machine = getComputerChoice();
     console.log(player);
-  
-    // let pc=getComputerChoice
+    console.log(machine);
+
+    if(player==machine){
+        console.log('No one wins :C try again!');
+    }
     
+    // const pc=getComputerChoice
+
+    // if (player==pc){
+    //     alert("No one Won :C Try again!");
+
+    // } else if {
+
+    // } else if {
+        
+    // } else if {
+        
+    // } else if {
+        
+    // } else if {
+        
+    // } else if {
+        
+    //  }
 }
