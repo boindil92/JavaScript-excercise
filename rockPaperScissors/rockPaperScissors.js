@@ -38,29 +38,28 @@ function singleRound (string) {
    
     const player = prompt("Please choose your weapon: ","rock,paper or scissors!");
     const machine = getComputerChoice();
-    console.log(player);
-    console.log(machine);
+    console.log('you choose'+player);
+    console.log('computer throws'+machine);
 
-    if(player==machine){
-        console.log('No one wins :C try again!');
+    if (player==machine) {
+        console.log("No one Won :C Try again!");
+
+    } else if (player=='rock' && machine=='paper') {
+         console.log('You LOSE! Paper beats Rock!');
+
+    } else if (player=='rock' && machine=='scissors') {
+        console.log('You WIN! Rock beats Scissors!');
+        
+    } else if (player=='paper'&&machine=='rock') {
+         console.log('You WIN! Paper beats Rock!');
+        
+    } else if (player=='paper'&&machine=='scissors') {
+         console.log('You LOSE! Scissors beats Paper!');
+        
+    } else if (player=='scissors'&&machine=='rock') {
+         console.log('You LOSE! Rock beats Scissors!');
+        
+    } else if (player=='scissors'&&machine=='paper') {
+         console.log('You WIN! Scissors beats Paper!');
     }
-    
-
-
-    // if (player==pc){
-    //     alert("No one Won :C Try again!");
-
-    // } else if {
-
-    // } else if {
-        
-    // } else if {
-        
-    // } else if {
-        
-    // } else if {
-        
-    // } else if {
-        
-    //  }
 }
