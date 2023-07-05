@@ -4,7 +4,6 @@ function testCC() { //Computer Choice
         let result=getComputerChoice();
         console.log(result);
     }
-
 }
 
 function testSR() {  //Single Round incomplete funcion results
@@ -14,7 +13,6 @@ function testSR() {  //Single Round incomplete funcion results
     for (let i=0; i<5;i++){     
         console.log(result);
     }
-
 }
 
 function testMR(a) {   //Multiple round function to decide how many rounds more games
@@ -22,7 +20,6 @@ function testMR(a) {   //Multiple round function to decide how many rounds more 
     for (let i=0;i<a;i++){     
        singleRound();
     }
-
 }
 
 function getComputerChoice () {
@@ -38,9 +35,6 @@ function getComputerChoice () {
     }
 }
 
-
-
-
 function singleRound (string) {
    
     let choice = prompt("Please choose your weapon: ","rock,paper or scissors!");
@@ -49,10 +43,6 @@ function singleRound (string) {
     console.log('you choose '+player);
     console.log('computer throws '+machine);
 
-    // if(player !='rock','paper','scissors'){
-    //     console.log('invalid Selection, please try again!');
-    // }
-    
     if (player==machine) {
         console.log("No one Won :C Try again!");
 
@@ -73,5 +63,7 @@ function singleRound (string) {
         
     } else if (player=='scissors'&&machine=='paper') {
          console.log('You WIN! Scissors beats Paper!');
+    } else {
+        console.log('invalid Selection, please try again!');
     }
 }
