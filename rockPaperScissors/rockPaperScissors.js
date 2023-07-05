@@ -43,7 +43,8 @@ function getComputerChoice () {
 
 function singleRound (string) {
    
-    const player = prompt("Please choose your weapon: ","rock,paper or scissors!");
+    let choice = prompt("Please choose your weapon: ","rock,paper or scissors!");
+    const player= choice.toLowerCase()
     const machine = getComputerChoice();
     console.log('you choose '+player);
     console.log('computer throws '+machine);
