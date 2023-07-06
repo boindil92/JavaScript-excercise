@@ -1,4 +1,4 @@
-function testCC() { //Computer Choice
+function testCC() { //To test Computer Choice
     
     for (let i=0; i<20;i++){
         let result=getComputerChoice();
@@ -15,7 +15,7 @@ function testSR() {  //Single Round incomplete funcion results
     }
 }
 
-function testMR(a) {   //Multiple round function to decide how many rounds more games
+function testMR(a) {   //Multiple round function that decides how many rounds/more games
     
     for (let i=0;i<a;i++){     
        singleRound();
