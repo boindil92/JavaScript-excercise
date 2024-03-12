@@ -15,7 +15,17 @@ newDiv.style.border = ("solid black");
 newDiv.textContent="hello";
 
 
-
 container.appendChild(content);
 container.appendChild(header);
+
+
+const newHeader=document.createElement("h1");
+newHeader.textContent="hi, i'm in a div";
+
+const newP=document.createElement("p");
+newP.textContent="me too!";
+
+newDiv.appendChild(newHeader);
+newDiv.appendChild(newP);
 container.appendChild(newDiv);
+
