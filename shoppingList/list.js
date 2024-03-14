@@ -5,6 +5,8 @@ const list= document.querySelector("#list");
 const item=document.querySelector("#item");
 
 
+
+
 addButton.addEventListener("click",adding);
 
 function test () {
@@ -15,7 +17,27 @@ function test () {
 function adding () {
 
     let itemValue=item.value;
-    alert(itemValue);
+
+
+
+    const newList=document.createElement("li");
+
+    const span=document.createElement("span");
+    span.textContent=itemValue;
+
+    const newButton=document.createElement("button");
+    newButton.textContent="Delete";
+
+    newList.appendChild(span);
+    newList.appendChild(newButton);
+    list.appendChild(newList);
 
 
 }
+
+
+
+
+
+
+
