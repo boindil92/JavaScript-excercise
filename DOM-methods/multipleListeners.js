@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll("button");
 
 
-buttons.forEach(buttonListener)
+buttons.forEach(buttonListener);
 
 function buttonListener(button) {
 
