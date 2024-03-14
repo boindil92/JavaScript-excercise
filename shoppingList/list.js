@@ -7,14 +7,14 @@ const item=document.querySelector("#item");
 
 
 
-addButton.addEventListener("click",adding);
+addButton.addEventListener("click",add);
 
 function test () {
     alert("ok!");
 }
 
 
-function adding () {
+function add () {
 
     let itemValue=item.value;
 
@@ -31,6 +31,15 @@ function adding () {
     newList.appendChild(span);
     newList.appendChild(newButton);
     list.appendChild(newList);
+
+    newButton.addEventListener("click",remove)
+
+    function remove (){
+        list.removeChild(newList);
+    }
+
+
+    item.value="";
 
 
 }
