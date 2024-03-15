@@ -68,6 +68,8 @@ function singleRound (string) {
     }
 }
 
+let player= undefined;
+
 let play=document.querySelector("#play");
 play.addEventListener("click",createButtons);
 
@@ -77,10 +79,20 @@ function createButtons () {
 
     const rockButton=document.createElement("button");
     rockButton.textContent="Rock!";
+    rockButton.addEventListener("click", () => {player="rock";});
+    rockButton.addEventListener("click",oneRound);
+    
+
     const paperButton=document.createElement("button");
     paperButton.textContent="Paper!";
+    paperButton.addEventListener("click", () => {player="paper";});
+    paperButton.addEventListener("click",oneRound);
+
+
     const scissorsButton=document.createElement("button");
     scissorsButton.textContent="Scissors!";
+    scissorsButton.addEventListener("click", () => {player="scissors";});
+    scissorsButton.addEventListener("click",oneRound);
 
     newDiv.appendChild(rockButton);
     newDiv.appendChild(paperButton);
@@ -91,18 +103,12 @@ function createButtons () {
 }
 
 
-const rock= document.querySelector("#rock");
-const paper= document.querySelector("#paper");
-const scissosrs=document.querySelector("scissors");
 
-rock.addEventListener("click",rockRound);
-paper.addEventListener("click",);
-scissosrs-addEventListener("click",);
 
-function rockRound () {
+function oneRound () {
    
     
-    const player= "rock"
+    
     const machine = getComputerChoice();
     alert('you choose '+player);
     alert('computer throws '+machine);
