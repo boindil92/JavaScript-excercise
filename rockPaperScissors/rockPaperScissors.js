@@ -67,3 +67,67 @@ function singleRound (string) {
         console.log('invalid Selection, please try again!');
     }
 }
+
+let play=document.querySelector("#play");
+play.addEventListener("click",createButtons);
+
+function createButtons () {
+    const upper=document.querySelector("#upper");
+    const newDiv=document.createElement("div");
+
+    const rockButton=document.createElement("button");
+    rockButton.textContent="Rock!";
+    const paperButton=document.createElement("button");
+    paperButton.textContent="Paper!";
+    const scissorsButton=document.createElement("button");
+    scissorsButton.textContent="Scissors!";
+
+    newDiv.appendChild(rockButton);
+    newDiv.appendChild(paperButton);
+    newDiv.appendChild(scissorsButton);
+
+    upper.appendChild(newDiv);
+
+}
+
+
+const rock= document.querySelector("#rock");
+const paper= document.querySelector("#paper");
+const scissosrs=document.querySelector("scissors");
+
+rock.addEventListener("click",rockRound);
+paper.addEventListener("click",);
+scissosrs-addEventListener("click",);
+
+function rockRound () {
+   
+    
+    const player= "rock"
+    const machine = getComputerChoice();
+    alert('you choose '+player);
+    alert('computer throws '+machine);
+
+    if (player==machine) {
+        alert("No one Won :C Try again!");
+
+    } else if (player=='rock' && machine=='paper') {
+        alert('You LOSE! Paper beats Rock!');
+
+    } else if (player=='rock' && machine=='scissors') {
+        alert('You WIN! Rock beats Scissors!');
+        
+    } else if (player=='paper'&&machine=='rock') {
+        alert('You WIN! Paper beats Rock!');
+        
+    } else if (player=='paper'&&machine=='scissors') {
+        alert('You LOSE! Scissors beats Paper!');
+        
+    } else if (player=='scissors'&&machine=='rock') {
+        alert('You LOSE! Rock beats Scissors!');
+        
+    } else if (player=='scissors'&&machine=='paper') {
+        alert('You WIN! Scissors beats Paper!');
+    } else {
+        alert('invalid Selection, please try again!');
+    }
+}
