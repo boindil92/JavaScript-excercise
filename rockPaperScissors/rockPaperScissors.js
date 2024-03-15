@@ -35,7 +35,7 @@ function getComputerChoice () {
     }
 }
 
-function singleRound (string) {
+function consoleSingleRound (string) {
    
     let choice = prompt("Please choose your weapon: ","rock,paper or scissors!");
     const player= choice.toLowerCase()
@@ -68,25 +68,48 @@ function singleRound (string) {
     }
 }
 
+
+
+
+// DOM elements from here, creation of UI
+
+
+
 let player= undefined;
+let pcScore=0;
+let playerScore=0;
 
 let play=document.querySelector("#play");
 play.addEventListener("click",createButtons);
+// upper.removeChild(scoreboard); needs to obe implemented to clear scoreboard.
+
 
 function createButtons () {
+
+
     const upper=document.querySelector("#upper");
     const newDiv=document.createElement("div");
+
+    play.removeEventListener("click",createButtons);
+
+
 
     const rockButton=document.createElement("button");
     rockButton.textContent="Rock!";
     rockButton.addEventListener("click", () => {player="rock";});
     rockButton.addEventListener("click",oneRound);
+    rockButton.addEventListener("click", () => {upper.removeChild(scoreboard);});
+
     
+
 
     const paperButton=document.createElement("button");
     paperButton.textContent="Paper!";
     paperButton.addEventListener("click", () => {player="paper";});
     paperButton.addEventListener("click",oneRound);
+
+    
+
 
 
     const scissorsButton=document.createElement("button");
@@ -94,20 +117,19 @@ function createButtons () {
     scissorsButton.addEventListener("click", () => {player="scissors";});
     scissorsButton.addEventListener("click",oneRound);
 
+
     newDiv.appendChild(rockButton);
     newDiv.appendChild(paperButton);
     newDiv.appendChild(scissorsButton);
-
     upper.appendChild(newDiv);
 
 }
 
 
 
-
 function oneRound () {
    
-    
+
     
     const machine = getComputerChoice();
     alert('you choose '+player);
@@ -118,22 +140,36 @@ function oneRound () {
 
     } else if (player=='rock' && machine=='paper') {
         alert('You LOSE! Paper beats Rock!');
+        pcScore=(pcScore+1);
 
     } else if (player=='rock' && machine=='scissors') {
         alert('You WIN! Rock beats Scissors!');
+        playerScore=(playerScore+1);
         
     } else if (player=='paper'&&machine=='rock') {
         alert('You WIN! Paper beats Rock!');
+        playerScore=(playerScore+1);
         
     } else if (player=='paper'&&machine=='scissors') {
         alert('You LOSE! Scissors beats Paper!');
+        pcScore=(pcScore+1);
         
     } else if (player=='scissors'&&machine=='rock') {
         alert('You LOSE! Rock beats Scissors!');
+        pcScore=(pcScore+1);
         
     } else if (player=='scissors'&&machine=='paper') {
         alert('You WIN! Scissors beats Paper!');
+        playerScore=(playerScore+1);
     } else {
         alert('invalid Selection, please try again!');
     }
+
+
+    const scoreboard=document.createElement("div");
+    scoreboard.textContent="PC score= "+pcScore+" Your score= "+playerScore;
+    upper.appendChild(scoreboard);
+    play.removeEventListener("click",createScoreboard);
+
+
 }
