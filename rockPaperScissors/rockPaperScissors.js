@@ -90,22 +90,30 @@ function createButtons () {
     const upper=document.querySelector("#upper");
     const newDiv=document.createElement("div");
 
+    const scoreboard=document.createElement("div");
+
+
+    
+    
+
     play.removeEventListener("click",createButtons);
 
 
 
     const rockButton=document.createElement("button");
     rockButton.textContent="Rock!";
-    rockButton.addEventListener("click", () => {player="rock";});
+    rockButton.addEventListener("click", () => {player="rock"
+    scoreboard.textContent="PC score= "+pcScore+" Your score= "+playerScore;;});
     rockButton.addEventListener("click",oneRound);
-    rockButton.addEventListener("click", () => {upper.removeChild(scoreboard);});
+
 
     
 
 
     const paperButton=document.createElement("button");
     paperButton.textContent="Paper!";
-    paperButton.addEventListener("click", () => {player="paper";});
+    paperButton.addEventListener("click", () => {player="paper"
+    scoreboard.textContent="PC score= "+pcScore+" Your score= "+playerScore;;});
     paperButton.addEventListener("click",oneRound);
 
     
@@ -114,13 +122,16 @@ function createButtons () {
 
     const scissorsButton=document.createElement("button");
     scissorsButton.textContent="Scissors!";
-    scissorsButton.addEventListener("click", () => {player="scissors";});
+    scissorsButton.addEventListener("click", () => {player="scissors"
+    scoreboard.textContent="PC score= "+pcScore+" Your score= "+playerScore;;});
     scissorsButton.addEventListener("click",oneRound);
 
 
     newDiv.appendChild(rockButton);
     newDiv.appendChild(paperButton);
     newDiv.appendChild(scissorsButton);
+    newDiv.appendChild(scoreboard);
+
     upper.appendChild(newDiv);
 
 }
@@ -134,6 +145,7 @@ function oneRound () {
     const machine = getComputerChoice();
     alert('you choose '+player);
     alert('computer throws '+machine);
+
 
     if (player==machine) {
         alert("No one Won :C Try again!");
@@ -164,12 +176,8 @@ function oneRound () {
     } else {
         alert('invalid Selection, please try again!');
     }
+    
 
-
-    const scoreboard=document.createElement("div");
-    scoreboard.textContent="PC score= "+pcScore+" Your score= "+playerScore;
-    upper.appendChild(scoreboard);
-    play.removeEventListener("click",createScoreboard);
 
 
 }
