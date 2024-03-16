@@ -75,16 +75,21 @@ function consoleSingleRound (string) {
 
 
 
-let player= undefined;
-let pcScore=0;
-let playerScore=0;
+
 
 let play=document.querySelector("#play");
 play.addEventListener("click",createButtons);
-// upper.removeChild(scoreboard); needs to obe implemented to clear scoreboard.
+
+
 
 
 function createButtons () {
+
+    let player= undefined;
+    let pcScore=0;
+    let playerScore=0;
+
+
 
 
     const upper=document.querySelector("#upper");
@@ -141,8 +146,17 @@ function createButtons () {
         alert('computer throws '+machine);
     
     
-        if (player==machine) {
-            alert("No one Won :C Try again!");
+        if (playerScore==3 || pcScore ==3) {
+            if (pcScore==3) {
+                upper.removeChild(newDiv);
+                alert("PC VICTORY!");
+                play.addEventListener("click",createButtons);
+            } else {
+                alert("HUMAN VICTORY!");
+                upper.removeChild(newDiv);
+                play.addEventListener("click",createButtons);
+            }
+            
     
         } else if (player=='rock' && machine=='paper') {
             alert('You LOSE! Paper beats Rock!');
@@ -175,6 +189,12 @@ function createButtons () {
     
     
     }
+
+    // if (playerScore == 2 || pcScore == 2) {
+
+    //     upper.removeChild(newDiv);
+
+    // }
 
 
 }
